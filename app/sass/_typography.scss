@@ -1,0 +1,44 @@
+h1, h2, h3, h4, h5, h6, label, .table > thead > tr > th {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+h1, .h1 {
+  font-size: 30px;
+}
+
+h2, .h2 {
+  font-size: 24px;
+}
+
+h3, .h3 {
+  font-size: 18px;
+}
+
+h4, .h4 {
+  font-size: 16px;
+}
+
+h5, .h5 {
+  font-size: 13px;
+}
+
+h6, .h6 {
+  font-size: 11px;
+}
+
+h3, h4, h5 {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+sub, sup {
+  font-size: 85%;
+}
+
+blockquote {
+  font-size: 1em;
+}

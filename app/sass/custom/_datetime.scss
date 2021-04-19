@@ -1,0 +1,40 @@
+.datetime-field {
+  position: relative;
+  font-size: 1rem;
+  font-family: "pf_beausans_pro", "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .input-group {
+    & > input {
+      cursor: pointer;
+    }
+  } 
+  .animated {
+    animation-duration: .3s;
+  }
+}
+.datetime-field-calendar-wrap {
+  position: absolute;
+  z-index: $zindex-popover;
+}
+.datetime-field-calendar {
+  background-color: $body_bg;
+  border: 1px solid $dark-gray;
+}
+.datetime-field-calendar-day-of-week {
+  color: #FFF;
+}
+.datetime-field-calendar-day{
+  cursor: pointer;
+  &:hover {
+    transition: background-color 0.5s ease;
+    background-color: $blue;
+    color: #FFF !important;
+  }
+}
+.datetime-field-calendar-selector-year {
+  position: absolute;
+  top: 0;
+}
+.datetime-selectyear {
+  flex: 1 1 auto;
+  cursor: pointer;
+}

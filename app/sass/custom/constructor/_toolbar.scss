@@ -1,0 +1,36 @@
+.table-insert-helper-wrap {
+  position: relative;
+}
+.table-insert-helper{
+  position: absolute;
+  margin-top: 4px;
+  border: 1px solid #AAA;
+  background: #FFF;
+  padding: 1px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.table-insert-helper-head {
+  line-height: 16px;
+  font-size: 11px;
+  background-color: #ccc;
+  color: #666;
+  padding: 3px;
+}
+.table-insert-helper-grid {
+  display: table;
+  padding: 1px;
+  border-spacing: 3px;
+}
+.table-insert-helper-grid-row {
+  display: table-row;
+}
+.table-insert-helper-grid-cell {
+  display: table-cell;
+  padding: 5px;
+  border: 1px solid #333;
+  cursor: default;
+  &.active {
+    border-color: coral;
+  }
+  
+}

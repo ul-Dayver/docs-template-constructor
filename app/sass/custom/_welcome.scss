@@ -1,0 +1,30 @@
+.doc-preview {
+  width: 218px;
+  margin-left: 20px;
+  border: 1px solid $gray-400;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  .img-doc-preview {
+    width: 210px;
+    height: 297px;
+    background-color: #fff;
+    margin: auto;
+  }
+
+  .doc-preview-name {
+    background: #fff;
+    text-align: left;
+    letter-spacing: .15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  &:hover {
+    border: 1px solid $blue;
+  }
+}

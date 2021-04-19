@@ -1,0 +1,67 @@
+@import "fonts/icomoon/font";
+@import "custom/auth";
+@import "custom/welcome";
+@import "custom/editor";
+
+.alert {
+  .media-left {
+    vertical-align: middle;
+    padding-right: 15px;
+  }
+}
+
+.dashed-link {
+  border-bottom: 1px dashed #337ab7;
+  &:hover{
+    border-bottom-color: dashed #23527c;
+  }
+}
+
+blockquote ul{
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-bottom: 1em;
+    &:before {
+      content: "\2014\a0";
+      display: block;
+      position: relative;
+      float: left;
+      margin-left: -1.7em;
+      margin-right: 5px;
+    }
+  }
+}
+
+figure{
+  margin: 0;
+}
+
+.border-top-dark{border-top-color: $dark !important;}
+.border-bottom-dark{border-bottom-color: $dark !important;}
+.border-left-dark{border-left-color: $dark !important;}
+.border-right-dark{border-right-color: $dark !important;}
+
+.display-5 {
+  @include font-size(2rem);
+  font-weight: $display4-weight;
+  line-height: $display-line-height;
+}
+
+.form-control-without-decoration {
+  &, &:active, &:focus {
+    outline: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent;
+  }
+}
+
+.dropdown-item.active svg {
+  fill: $dropdown-link-active-color;
+}
+
+@import "custom/switch";
+@import "custom/constructor";
+@import "custom/datetime";

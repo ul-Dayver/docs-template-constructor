@@ -1,0 +1,96 @@
+.draftJsToolbar__buttonWrapper {
+  display: inline-block;
+  button {
+    font-size: 16px;
+  }
+}
+  
+.draftJsToolbar__button {
+  background: #fbfbfb;
+  color: #888;
+  font-size: 18px;
+  border: 0;
+  padding-top: 5px;
+  vertical-align: bottom;
+  height: 34px;
+  width: 36px;
+}
+  
+.draftJsToolbar__button svg {
+  fill: #888;
+}
+  
+.draftJsToolbar__button:hover, .draftJsToolbar__button:focus {
+  background: #f3f3f3;
+  outline: 0; /* reset for :focus */
+}
+  
+.draftJsToolbar__active {
+  background: #efefef;
+  color: #444;
+}
+ 
+.draftJsToolbar__active svg {
+  fill: #444;
+}
+.draftJsToolbar__separator__3U7qt {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-top: -3px;
+  &:after {
+    content: "";
+    display: block;
+    border-right: 1px solid #ddd;
+    height: 24px;
+  }
+}
+.draftJsToolbar__toolbar__static, .draftJsToolbar__toolbar__inline {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: $white;
+  
+  z-index: 2;
+  box-sizing: border-box;
+
+  .dropdown-text-label{
+    width: 100px;
+    display: block;
+    overflow: hidden;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+  
+.draftJsToolbar__toolbar__static:after, .draftJsToolbar__toolbar__inline:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 4px;
+  margin-left: -4px;
+}
+.draftJsToolbar__toolbar__static:before, .draftJsToolbar__toolbar__inline:before {
+  border-color: rgba(221, 221, 221, 0);
+  border-top-color: #ddd;
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.draftJsToolbar__toolbar__inline {
+  left: 50%;
+  -webkit-transform: translate(-50%) scale(0);
+          transform: translate(-50%) scale(0);
+  position: absolute;
+}
+
+.draftJsToolbar__toolbar__inline:after, .draftJsToolbar__toolbar__inline:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}

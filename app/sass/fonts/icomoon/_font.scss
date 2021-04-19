@@ -1,0 +1,66 @@
+$icomoon-font-version: "g4n2fb";
+$icomoon-font-filename: "fonts/icomoon/icomoon";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-filename}.eot?#{$icomoon-font-version}');
+  src:  url('#{$icomoon-font-filename}.eot?#{$icomoon-font-version}#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-filename}.ttf?#{$icomoon-font-version}') format('truetype'),
+    url('#{$icomoon-font-filename}.woff?#{$icomoon-font-version}') format('woff'),
+    url('#{$icomoon-font-filename}.svg?#{$icomoon-font-version}#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-microsoftword:before {
+  content: "\e90c";
+  color: #2b579a;
+}
+.icon-redo:before {
+  content: "\e90a";
+}
+.icon-undo:before {
+  content: "\e90b";
+}
+.icon-align-justified:before {
+  content: "\e90f";
+}
+.icon-align-center:before {
+  content: "\e910";
+}
+.icon-align-left:before {
+  content: "\e911";
+}
+.icon-align-right:before {
+  content: "\e912";
+}
+.icon-page-break:before {
+  content: "\ea6e";
+}
+.icon-table2:before {
+  content: "\ea71";
+}
+.icon-show-sidebar:before {
+  content: "\e900";
+}
+
+.btn {
+  [class^="icon-"], [class*=" icon-"] {
+    vertical-align: text-bottom;
+  }
+}

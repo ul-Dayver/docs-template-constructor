@@ -1,0 +1,37 @@
+.editor-toolbar {
+  height: 53px;
+  padding: .5rem 1rem;
+}
+.editor-edit-name-label,
+.editor-edit-name {
+  font-size: 19px;
+  line-height: 21px;
+  font-variant-ligatures: no-contextual;
+  border: 1px solid transparent;
+  padding: 2px 7px;
+}
+.editor-edit-name-label {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editor-edit-name {
+  color: $white;
+  box-sizing: content-box;
+
+  &:hover {
+    border: 1px solid $gray-200;
+  }
+  &:focus,&:active {
+    border: 2px solid $blue;
+    margin: -1px;
+    color: $dark;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+}

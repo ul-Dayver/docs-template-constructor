@@ -1,0 +1,118 @@
+/*
+import React from 'react'
+import {Map} from 'immutable'
+import {EditorState, Modifier, SelectionState} from 'draft-js'
+import { configure, mount } from 'enzyme'
+import { mountToJson } from 'enzyme-to-json'
+
+import Adapter from "enzyme-adapter-react-16";
+
+import Constructor from 'components/constructor'
+import Document from 'components/constructor/document'
+import TableModel from "components/constructor/block/table/model"
+
+configure({ adapter: new Adapter() })
+
+jest.mock('popper.js', () => {
+  const PopperJS = jest.requireActual('popper.js');
+
+  return class {
+    static placements = PopperJS.placements;
+
+    constructor(virtualRef, popperNode, options) {
+      return {
+        destroy: () => {},
+        scheduleUpdate: () => {}
+      }
+    }
+  }
+})
+
+const directory = {
+  datatype: Map([
+    [
+      'd0a03d5b-545a-469a-813f-72e2f9516673',
+      Map({
+        "uid":"d0a03d5b-545a-469a-813f-72e2f9516673",
+        "name":"varchar",
+        "description":"строка",
+        "user_tooltip":"Строка исключает перенос строки"
+      })
+    ]
+  ])
+}
+
+const newTemplate = () => Map({name: 'Новый шаблон', sync: false, metadata: null, questionnaire: null, document: Document.createEmpty()})
+const handleChangeDocument = function (templateDataJSON) {
+  this.template = Map(Object.assign(this.template.toJSON(), templateDataJSON))
+}
+const mountConstructor = (context) => mount(
+  <Constructor template={context.template} directory={directory} onChange={handleChangeDocument.bind(context)}/>
+)
+
+const getFinderCell = (x, y) => {
+  return cell => cell.exists() && cell.name() == 'Tcell'
+    && cell.props().cell.getPosition('y') === y
+    && cell.props().cell.getPosition('x') === x
+}
+
+describe('Constructor', () => {
+  let context = {
+    template: newTemplate()
+  }
+
+  it('table', () => {
+    let constructor = mountConstructor(context)
+    constructor.find('TableButton button').simulate('click')
+    constructor.find('TableButton .table-insert-helper-grid-cell').last().simulate('mousemove')
+    constructor.find('TableButton .table-insert-helper-grid').simulate('click')
+
+    constructor = mountConstructor(context)
+    
+    let tableRows = context.template.get('document').getContent().first().get('state').getRows()
+    expect(tableRows.size).toBe(10)
+    expect(tableRows.first().size).toBe(10)
+
+    tableRows.forEach(
+      row => row.forEach(
+        cell => {
+          let Cell = constructor.findWhere(getFinderCell(cell.getPosition('x'), cell.getPosition('y')))
+          let editorState = Cell.prop('cell').getEditorState()
+          
+          let contentState = editorState.getCurrentContent()
+
+          let text = Math.max(parseInt(cell.getPosition('x'), 10), parseInt(cell.getPosition('y'), 10))
+
+          contentState = Modifier.insertText(contentState, editorState.getSelection(), text + '')
+          editorState = EditorState.push(editorState, contentState,'insert-characters')
+
+          Cell.find('DraftEditor').prop('onChange')(editorState)
+
+          constructor = mountConstructor(context)
+        }
+       )
+    )
+
+    constructor.findWhere(getFinderCell(1, 2)).simulate('mousedown')
+    constructor.findWhere(getFinderCell(3, 3)).simulate('mousemove')
+    constructor.find('table').simulate('mouseup')
+    
+    global.document.querySelector(".popover-body .dropdown a[title=Строки]").nextSibling.querySelectorAll("a.dropdown-item")[0].click();
+
+    constructor = mountConstructor(context)
+    tableRows = context.template.get('document').getContent().first().get('state').getRows()
+    
+    expect(tableRows.getIn(Map({y: 4, x: 1}).values()).toRaw().value.blocks[0].text).toBe('')
+    expect(tableRows.getIn(Map({y: 5, x: 1}).values()).toRaw().value.blocks[0].text).toBe('4')
+
+    //expect(constructor.findWhere(getFinderCell(1, 2)).find('DirectlyEditor')).toMatchSnapshot()
+
+    //console.log(tableRows.getIn(Map({y: cell.getPosition('y'), x: cell.getPosition('x')}).values()).toRaw().value.blocks[0])
+    //global.document.querySelector(".popover-body .dropdown-menu a").click();
+    //expect(global.document.querySelector(".popover-body .dropdown-menu a")).toMatchSnapshot()
+    
+    //expect(mountToJson(constructor.find('Tcell'))).toMatchSnapshot()
+    //expect(mountToJson(global.document.body.childNodes[global.document.body.childNodes.length-1])).toMatchSnapshot()
+  })
+})
+*/
